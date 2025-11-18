@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Plant Diagnosis Pro</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <!-- Bootstrap for quick layout/icons, but main styles are custom -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin:0;
+      font-family:'Segoe UI',Arial,sans-serif;
+      min-height:100vh;
+      background:#d4ffe9;
+      overflow-x:hidden;
+    }
+    .header-bar {
+      background: linear-gradient(90deg,#22e3b9 0%,#38c6f1 100%);
+      padding: 0.7em 0;
+      font-size:2.2rem;
+      text-align:center;
+      color: #fff;
+      font-weight: 900;
+      letter-spacing:1.3px;
+      border-radius: 1em 1em 0 0;
+      margin-bottom:0;
+    }
+    .nav-bar {
+      display: flex;
+      background: linear-gradient(90deg,#38c6f1 40%,#22e3b9 100%);
+      justify-content: center;
+      align-items: center;
+      gap:2.2em;
+      padding:1em 0;
+      font-size:1.15em;
+      font-weight:600;
+      position:relative;
+    }
+    .nav-bar a {
+      color:#fff;
+      text-decoration:none;
+      padding:0.32em 1.2em;
+      border-radius: 32px;
+      transition: background 0.16s;
+    }
+    .nav-bar a.active {
+      background: #fff;
+      color: #22e3b9;
+      font-weight:800;
+      box-shadow:0 2px 10px #0bdcd81a;
+      border:2px solid #16cc93;
+    }
+    .nav-bar a:hover { background:#22e3b9; color:#fff; }
+    .banner-bar {
+      background:#171717;
+      color:#fff;
+      font-size:1.05em;
+      font-weight:700;
+      padding:0.5em 1em;
+      letter-spacing:0.6px;
+      text-align:left;
+    }
+    .main-bg {
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') center/cover fixed;
+      position: absolute;
+      top:0; left:0; width:100%; height:100vh; z-index:-2;
+      filter: blur(2.5px) brightness(0.70);
+      opacity:0.82;
+    }
+    .content-overlay {
+      position:relative;
+      z-index:1;
+      min-height:80vh;
+      display: flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content: center;
+    }
+    .main-title {
+      font-size:3.2em;
+      color:#fff;
+      font-weight:900;
+      letter-spacing:0.06em;
+      margin-top: 3.5vw;
+      text-shadow:0 7px 22px #17b57e95, 0 1px 0 #2e8cff;
+      text-align:center;
+    }
+    .center-card {
+      margin:6vw auto 0 auto;
+      background: rgba(255,255,255,0.15);
+      border-radius:18px;
+      padding:3vw 2.2vw 2.5vw 2.2vw;
+      box-shadow: 0 10px 35px #20e29533;
+      width: min(480px,89vw);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .center-card h2 {
+      color:#fff;
+      font-size:2.24em;
+      margin-bottom:1.1em;
+      font-weight:900;
+      letter-spacing:0.05em;
+      text-shadown:0 1px 0 #3ad485;
+      text-align:center;
+    }
+    .center-card input[type="file"] {
+      margin-bottom:1.3em;
+      font-size:1.1em;
+      background:rgba(255,255,255,0.8);
+      border-radius:8px;
+      border:1px solid #e6e6cc;
+      padding: 0.35em 0.5em;
+    }
+    .center-card button {
+      background:#23a940 !important;
+      color: #fff;
+      border: none;
+      font-weight:700;
+      padding:0.7em 2em;
+      border-radius:10px;
+      font-size:1.13em;
+      margin-top:0.7em;
+      box-shadow:0 4px 18px #21c38b54;
+      transition:background .18s;
+      cursor:pointer;
+    }
+    .center-card button:hover {
+      background:#33cd40;
+    }
+    /* Responsive styles */
+    @media (max-width:660px) {
+      .main-title { font-size:2em;margin-top:13vw;}
+      .center-card{padding:7vw 2vw 4vw 2vw;}
+      .header-bar{font-size:1.32rem;}
+      .nav-bar{font-size:.97em;gap:1em;}
+    }
+  </style>
+</head>
+<body>
+  <div class="header-bar">Plant Diagnosis Pro</div>
+  <div class="nav-bar">
+      <a href="#" class="active">Home</a>
+      <a href="#">Upload</a>
+      <a href="#">Results</a>
+      <a href="#">History</a>
+      <a href="#">Dashboard</a>
+      <a href="#">Login</a>
+  </div>
+  <div class="banner-bar">
+      <i class="fa-solid fa-seedling"></i>
+      PRO VERSION [MAKE FARMERS HAPPY] &nbsp; KNOW WHAT PROBLEM YOUR PLANT IS FACING — MAKE SURE TO TAKE APPROPRIATE PREVENTIVE ACTIONS!
+  </div>
+  <div class="main-bg"></div>
+  <div class="content-overlay">
+    <h1 class="main-title">Plant Disease Recognition</h1>
+    <div class="center-card">
+      <h2>Upload Image</h2>
+      <input type="file" disabled>
+      <button type="button" disabled>Upload</button>
+    </div>
+  </div>
+  <div class="dashboard-container">
+    <div class="dashboard-cards">
+      <div class="feature-card">
+        <i class="fa-solid fa-leaf"></i>
+        <div class="feature-title pro">Fast Disease Detection</div>
+        <div class="feature-desc">Use AI to predict plant diseases from uploaded images in seconds.</div>
+      </div>
+      <div class="feature-card">
+        <i class="fa-solid fa-chart-line"></i>
+        <div class="feature-title dashboard">Dashboard & History</div>
+        <div class="feature-desc">Track your past diagnoses, monitor plant health over time.</div>
+      </div>
+      <div class="feature-card">
+        <i class="fa-solid fa-shield-halved"></i>
+        <div class="feature-title treatment">Treatment Guidance</div>
+        <div class="feature-desc">Get actionable advice for treating detected diseases.</div>
+      </div>
+    </div>
+    <div class="dashboard-cards two-row">
+      <div class="feature-card">
+        <i class="fa-solid fa-user"></i>
+        <div class="feature-title settings">User Profile & Settings</div>
+        <div class="feature-desc">Personalize your experience, manage preferences securely.</div>
+      </div>
+      <div class="feature-card">
+        <i class="fa-solid fa-headset"></i>
+        <div class="feature-title support">Support & Contact</div>
+        <div class="feature-desc">Chat with plant health experts or reach out directly for help.</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    © 2025 <b>Plant Diagnosis Pro</b> — Made by <span class="footer-credit">OMKAR</span> for better farming.
+    <span class="footer-contact">| <a href="#" class="footer-link">Contact</a></span>
+    <a href="#" class="footer-link">Privacy Policy</a>
+  </div>
+</body>
+</html>
